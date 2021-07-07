@@ -52,7 +52,7 @@ public class SignUpActivity extends AppCompatActivity {
 
                                 Toast.makeText(SignUpActivity.this,"User created successfully",Toast.LENGTH_SHORT).show();
                             }else{
-                                Toast.makeText(SignUpActivity.this,task.getException().getMessage(),Toast.LENGTH_SHORT);
+                                Toast.makeText(SignUpActivity.this,task.getException().getMessage(),Toast.LENGTH_SHORT).show();
                             }
                         }
                     });
@@ -61,12 +61,9 @@ public class SignUpActivity extends AppCompatActivity {
             }
         });
 
-        binding.tvalreadyAccount.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(SignUpActivity.this, SignInActivity.class);
-                startActivity(intent);
-            }
+        binding.tvalreadyAccount.setOnClickListener(v -> {
+            Intent intent = new Intent(SignUpActivity.this, SignInActivity.class);
+            startActivity(intent);
         });
     }
 
