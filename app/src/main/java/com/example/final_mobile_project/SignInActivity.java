@@ -5,7 +5,6 @@ import android.app.ProgressDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
-import android.widget.Button;
 import android.widget.Toast;
 
 import androidx.activity.result.ActivityResultLauncher;
@@ -99,7 +98,7 @@ public class SignInActivity extends AppCompatActivity {
     }
 
     private void handleFacebookAccessToken(AccessToken token) {
-        Log.d("FBlogin", "handleFacebookAccessToken:" + token);
+        Log.d("FBLogin", "handleFacebookAccessToken:" + token);
 
         AuthCredential credential = FacebookAuthProvider.getCredential(token.getToken());
         auth.signInWithCredential(credential)
@@ -108,12 +107,12 @@ public class SignInActivity extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
                             // Sign in success, update UI with the signed-in user's information
-                            Log.d("FBlogin", "signInWithCredential:success");
+                            Log.d("FBLogin", "signInWithCredential:success");
                             FirebaseUser user = auth.getCurrentUser();
                             updateUI(user);
                         } else {
                             // If sign in fails, display a message to the user.
-                            Log.w("FBlogin", "signInWithCredential:failure", task.getException());
+                            Log.w("FBLogin", "signInWithCredential:failure", task.getException());
                             Toast.makeText(SignInActivity.this, "Authentication failed.",
                                     Toast.LENGTH_SHORT).show();
 //                            updateUI(null);
@@ -213,7 +212,7 @@ public class SignInActivity extends AppCompatActivity {
     private void updateUI(FirebaseUser user){
         if (user!=null){
             Log.d("user", "updateUI: " +user.getUid());
-            startActivity(new Intent(SignInActivity.this,MainActivity.class));
+            startActivity(new Intent(SignInActivity.this,HomePageActivity.class));
             finish();
         }
     }

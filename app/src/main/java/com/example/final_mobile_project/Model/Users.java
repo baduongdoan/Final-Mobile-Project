@@ -1,15 +1,25 @@
 package com.example.final_mobile_project.Model;
 
 public class Users {
-    String profilePic, userName, mail, password, userId, lastMessage;
+    private String profilePic, userName, mail, password, userId, lastMessage, bio;
 
-    public Users(String profilePic, String userName, String mail, String password, String userId, String lastMessage) {
+
+    public Users(String profilePic, String userName, String mail,
+                 String password, String userId, String lastMessage, String bio) {
         this.profilePic = profilePic;
         this.userName = userName;
         this.mail = mail;
         this.password = password;
         this.userId = userId;
         this.lastMessage = lastMessage;
+        this.bio = bio;
+    }
+
+    public Users(String profilePic, String userName, String userId, String bio) {
+        this.profilePic = profilePic;
+        this.userName = userName;
+        this.userId = userId;
+        this.bio = bio;
     }
 
     public Users() {
@@ -67,5 +77,13 @@ public class Users {
 
     public void setLastMessage(String lastMessage) {
         this.lastMessage = lastMessage;
+    }
+
+    public String getBio() {
+        return bio;
+    }
+
+    public void setBio(String bio) {
+        this.bio = bio;
     }
 }

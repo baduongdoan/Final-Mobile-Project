@@ -1,5 +1,7 @@
 <resources>
-    <string name="app_name">Alaba</string>
+    <string name="app_name">Alaba1</string>
     <string name="facebook_app_id">543511113339791</string>
     <string name="fb_login_protocol_scheme">fb543511113339791</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
