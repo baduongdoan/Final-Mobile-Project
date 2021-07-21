@@ -139,7 +139,7 @@ public class SignInActivity extends AppCompatActivity {
             auth.signInWithEmailAndPassword(binding.etEmail2.getText().toString(), binding.etPassword2.getText().toString()).addOnCompleteListener(task -> {
                 progressDialog.dismiss();
                 if(task.isSuccessful()){
-                    Intent intent = new Intent(SignInActivity.this, MainActivity.class);
+                    Intent intent = new Intent(SignInActivity.this, HomePageActivity.class);
                     startActivity(intent);
                 }else {
                     Toast.makeText(SignInActivity.this,task.getException().getMessage(),Toast.LENGTH_SHORT).show();
