@@ -99,7 +99,7 @@ public class PostActivity extends AppCompatActivity {
         close.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(PostActivity.this, MainActivity.class));
+                startActivity(new Intent(PostActivity.this, HomePageActivity.class));
                 finish();
             }
         });
@@ -194,7 +194,7 @@ public class PostActivity extends AppCompatActivity {
 
                         progressDialog.dismiss();
 
-                        startActivity(new Intent(PostActivity.this, MainActivity.class));
+                        startActivity(new Intent(PostActivity.this, HomePageActivity.class));
                         finish();
                     } else {
                         Toast.makeText(PostActivity.this, "Failed!", Toast.LENGTH_SHORT).show();
